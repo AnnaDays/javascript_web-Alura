@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            color: white;
+            font-family: Montserrat; 
+            text-align: center;
+        }
+        div{
+            color: white;
+            font-family: Montserrat;
+            text-align: center;
+        }
+        button{
+            font-size: 30px;
+            font-family: Montserrat;
+            border-radius: 10px;
+            height: 60px;
+            width: 320px;
+            background-color: rgb(223, 208, 208);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cliques{
+            border: solid 3px white;
+            border-radius: 10px;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <br>
+
+    <div class="cliques">
+
+        <button>Clique em mim</button>
+        <br>
+        <br>
+    
+        <div class="resultado">
+            Cliques: 0
+        </div>
+    
+    </div>
+    <script>
+        let cont = 0;
+
+        function incremento(){
+            cont = cont + 1;
+            resultado.innerHTML= 'Cliques: ' + cont
+        }
+
+        const botao = document.querySelector('button');
+        let resultado = document.querySelector('.resultado');
+        botao.onclick = incremento;
+
+    </script>
+</body>
+</html>

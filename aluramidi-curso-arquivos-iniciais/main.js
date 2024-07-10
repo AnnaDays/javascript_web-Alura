@@ -1,17 +1,19 @@
 function tocaSom (idTagAudio){
     document.querySelector(idTagAudio).play() //play -> reproduz o som do audio na página
 }
-
+ 
 const listadeTeclas = document.querySelectorAll('.tecla');
 
-let contador = 0;
+//estrutura de repetição ->para
+for (let contador = 0; contador < listadeTeclas.length; contador++){
+    const tecla = listadeTeclas[contador];
+    const instrumento = tecla.classList[1];
 
-while (contador < listadeTeclas.length) {
+    const idAudio = `#som_${instrumento}`; //template string
 
-    listadeTeclas[contador].onclick = function (){
-        tocaSom('#som_tecla_pom');
+    //console.log(idAudio)
+
+    tecla.onclick = function () { // para essa função ser chamada, só é possivel se o usuário clicar no botão
+        tocaSom(idAudio); //passando a constante IdAudio como parâmetro pra função tocaSom
     }
-    contador = contador + 1;
-
-    console.log(contador);
 }
